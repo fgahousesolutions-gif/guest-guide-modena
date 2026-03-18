@@ -237,6 +237,12 @@
         <a class="btn" href="https://maps.google.com/?q=Corso+Adriano+13,+Modena" target="_blank" id="mapsButton">📍 Google Maps</a>
         <a class="btn" href="https://wa.me/393290624796?text=Buongiorno%2C%20sono%20un%20ospite%20di%20Apartment%20Corso%20Adriano%2013" target="_blank" id="waButton">💬 WhatsApp</a>
       </div>
+
+      <div class="button-row">
+        <a class="btn-secondary" href="./house-rules-it.pdf" target="_blank" id="rulesPdfButton">📄 Regole complete</a>
+        <a class="btn-secondary" href="./arrival-info-it.pdf" target="_blank" id="infoPdfButton">📘 Istruzioni dettagliate</a>
+        <a class="btn-secondary" href="./what-to-do.pdf" target="_blank" id="whatToDoButton">🗺️ Cosa fare in zona</a>
+      </div>
     </section>
 
     <section class="card">
@@ -345,6 +351,9 @@
         introText: "Tutte le informazioni utili per un soggiorno semplice e senza pensieri.",
         mapsButton: "📍 Google Maps",
         waButton: "💬 WhatsApp",
+        rulesPdfButton: "📄 Regole complete",
+        infoPdfButton: "📘 Istruzioni dettagliate",
+        whatToDoButton: "🗺️ Cosa fare in zona",
         addressLabel: "📍 Indirizzo",
         addressValue: "Corso Adriano 13, Modena",
         checkinLabel: "🕒 Check-in",
@@ -422,6 +431,9 @@
         introText: "All the useful information for a smooth and worry-free stay.",
         mapsButton: "📍 Google Maps",
         waButton: "💬 WhatsApp",
+        rulesPdfButton: "📄 Full house rules",
+        infoPdfButton: "📘 Detailed instructions",
+        whatToDoButton: "🗺️ What to do",
         addressLabel: "📍 Address",
         addressValue: "Corso Adriano 13, Modena",
         checkinLabel: "🕒 Check-in",
@@ -509,6 +521,9 @@
       document.getElementById("introText").textContent = t.introText;
       document.getElementById("mapsButton").textContent = t.mapsButton;
       document.getElementById("waButton").textContent = t.waButton;
+      document.getElementById("rulesPdfButton").textContent = t.rulesPdfButton;
+      document.getElementById("infoPdfButton").textContent = t.infoPdfButton;
+      document.getElementById("whatToDoButton").textContent = t.whatToDoButton;
       document.getElementById("addressLabel").textContent = t.addressLabel;
       document.getElementById("addressValue").textContent = t.addressValue;
       document.getElementById("checkinLabel").textContent = t.checkinLabel;
@@ -544,10 +559,17 @@
       renderList("emergencyList", t.emergencyList);
 
       const wa = document.getElementById("waButton");
+      const rulesPdfButton = document.getElementById("rulesPdfButton");
+      const infoPdfButton = document.getElementById("infoPdfButton");
+
       if (lang === "en") {
         wa.href = "https://wa.me/393290624796?text=Hello%2C%20I%20am%20a%20guest%20of%20Apartment%20Corso%20Adriano%2013";
+        rulesPdfButton.href = "./house-rules-en.pdf";
+        infoPdfButton.href = "./arrival-info-en.pdf";
       } else {
         wa.href = "https://wa.me/393290624796?text=Buongiorno%2C%20sono%20un%20ospite%20di%20Apartment%20Corso%20Adriano%2013";
+        rulesPdfButton.href = "./house-rules-it.pdf";
+        infoPdfButton.href = "./arrival-info-it.pdf";
       }
     }
 
