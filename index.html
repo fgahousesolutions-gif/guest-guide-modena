@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Apartment Corso Adriano 13 - Guest Guide</title>
+  <style>
+    :root {
+      --bg: #f3f4f6;
+      --card: #ffffff;
+      --text: #172554;
+      --muted: #64748b;
+      --accent: #0f172a;
+      --accent-2: #1e293b;
+      --border: #e5e7eb;
+      --shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+      --radius: 18px;
+      --link: #1d4ed8;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+    }
+
+    a {
+      color: var(--link);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .hero-image {
+      width: 100%;
+      height: 260px;
+      background: url("./cover.jpg") center/cover no-repeat;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      margin-bottom: 18px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 22px;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      margin: 0 0 8px;
+      font-size: 30px;
+      line-height: 1.2;
+      color: var(--accent);
+    }
+
+    h2 {
+      margin: 0 0 16px;
+      font-size: 22px;
+      color: var(--accent);
+    }
+
+    h3 {
+      margin: 0 0 10px;
+      font-size: 18px;
+      color: var(--accent);
+    }
+
+    .subtitle {
+      margin: 0;
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    .intro-text {
+      margin: 10px 0 0;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .button-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .btn,
+    .btn-secondary {
+      flex: 1 1 220px;
+      min-height: 50px;
+      border-radius: 14px;
+      border: 2px solid var(--accent-2);
+      font-size: 16px;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 16px;
+      transition: 0.2s ease;
+    }
+
+    .btn {
+      background: var(--accent);
+      color: #fff;
+    }
+
+    .btn:hover {
+      background: #020617;
+      text-decoration: none;
+    }
+
+    .btn-secondary {
+      background: #f8fafc;
+      color: var(--accent);
+    }
+
+    .btn-secondary:hover {
+      background: #eef2f7;
+      text-decoration: none;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    .info-item {
+      margin-bottom: 18px;
+    }
+
+    .label {
+      display: block;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 4px;
+    }
+
+    .value {
+      font-size: 16px;
+      color: #0f172a;
+    }
+
+    .note {
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .steps,
+    .list {
+      margin: 0;
+      padding-left: 24px;
+    }
+
+    .steps li,
+    .list li {
+      margin-bottom: 10px;
+      font-size: 16px;
+    }
+
+    .mini-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+
+    .mini-card {
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: #f8fafc;
+      padding: 16px;
+    }
+
+    .footer {
+      text-align: center;
+      color: var(--muted);
+      font-size: 14px;
+      padding: 8px 0 20px;
+    }
+
+    @media (max-width: 720px) {
+      .hero-image {
+        height: 200px;
+      }
+
+      h1 {
+        font-size: 26px;
+      }
+
+      .grid-2,
+      .mini-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .btn,
+      .btn-secondary {
+        flex-basis: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="hero-image"></div>
+
+    <section class="card">
+      <h1>Apartment Corso Adriano 13</h1>
+      <p class="subtitle" id="subtitle">Guida Ospiti / Guest Guide</p>
+      <p class="intro-text" id="introText">Tutte le informazioni utili per un soggiorno semplice e senza pensieri.</p>
+
+      <div class="button-row">
+        <button class="btn-secondary" onclick="setLanguage('it')">Italiano</button>
+        <button class="btn-secondary" onclick="setLanguage('en')">English</button>
+      </div>
+
+      <div class="button-row">
+        <a class="btn" href="https://maps.google.com/?q=Corso+Adriano+13,+Modena" target="_blank" id="mapsButton">📍 Google Maps</a>
+        <a class="btn" href="https://wa.me/393290624796?text=Buongiorno%2C%20sono%20un%20ospite%20di%20Apartment%20Corso%20Adriano%2013" target="_blank" id="waButton">💬 WhatsApp</a>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="grid-2">
+        <div>
+          <div class="info-item">
+            <span class="label" id="addressLabel">📍 Indirizzo</span>
+            <div class="value" id="addressValue">Corso Adriano 13, Modena</div>
+          </div>
+
+          <div class="info-item">
+            <span class="label" id="checkinLabel">🕒 Check-in</span>
+            <div class="value" id="checkinValue">15:00 - 00:00</div>
+          </div>
+
+          <div class="info-item">
+            <span class="label" id="checkoutLabel">🕘 Check-out</span>
+            <div class="value" id="checkoutValue">10:00 / 10:30</div>
+          </div>
+        </div>
+
+        <div>
+          <div class="info-item">
+            <span class="label" id="wifiLabel">📶 Wi-Fi</span>
+            <div class="value">TIM-46474228</div>
+            <div class="note" id="wifiPasswordLabel">Password: F43X4TczR7G5PHs9CzkTsAbC</div>
+          </div>
+
+          <div class="info-item">
+            <span class="label" id="hostLabel">💬 Contatto</span>
+            <div class="value">WhatsApp: +39 329 0624796</div>
+            <div class="note" id="hostNote">Solo chat 07:00–22:00</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2 id="accessTitle">🔑 Accesso</h2>
+      <ol class="steps" id="accessList"></ol>
+    </section>
+
+    <section class="card">
+      <h2 id="rulesTitle">📋 Regole casa</h2>
+      <ul class="list" id="rulesList"></ul>
+    </section>
+
+    <section class="card">
+      <h2 id="trashTitle">🗑️ Rifiuti</h2>
+      <ul class="list" id="trashList"></ul>
+    </section>
+
+    <section class="card">
+      <h2 id="checkoutTitle">✅ Prima del check-out</h2>
+      <ul class="list" id="checkoutList"></ul>
+    </section>
+
+    <section class="card">
+      <h2 id="parkingTitle">🚗 Parcheggio</h2>
+      <div class="mini-grid">
+        <div class="mini-card">
+          <h3><a href="https://maps.google.com/?q=NoviPark+Modena" target="_blank">NoviPark</a></h3>
+          <div id="parking1">Parcheggio coperto, circa 10 minuti a piedi.</div>
+        </div>
+
+        <div class="mini-card">
+          <h3><a href="https://maps.google.com/?q=Via+Prampolini+Modena" target="_blank">Via Prampolini</a></h3>
+          <div id="parking2">Parcheggio in strada, circa 3 minuti a piedi.</div>
+        </div>
+      </div>
+      <p class="note" id="parkingNote" style="margin-top: 14px;">Entrambi a pagamento.</p>
+    </section>
+
+    <section class="card">
+      <h2 id="suggestionsTitle">🍝 Suggerimenti in zona</h2>
+      <div class="mini-grid">
+        <div class="mini-card">
+          <h3 id="marketTitle">🛍️ Mercato</h3>
+          <ul class="list" id="marketList"></ul>
+        </div>
+
+        <div class="mini-card">
+          <h3 id="restaurantsTitle">🍽️ Ristoranti</h3>
+          <ul class="list" id="restaurantsList"></ul>
+        </div>
+
+        <div class="mini-card">
+          <h3 id="barsTitle">🍷 Bar / Aperitivo</h3>
+          <ul class="list" id="barsList"></ul>
+        </div>
+
+        <div class="mini-card">
+          <h3 id="emergencyTitle">🚑 Numeri utili</h3>
+          <ul class="list" id="emergencyList"></ul>
+        </div>
+      </div>
+    </section>
+
+    <div class="footer" id="footerText">Buon soggiorno a Modena</div>
+  </div>
+
+  <script>
+    const translations = {
+      it: {
+        subtitle: "Guida Ospiti / Guest Guide",
+        introText: "Tutte le informazioni utili per un soggiorno semplice e senza pensieri.",
+        mapsButton: "📍 Google Maps",
+        waButton: "💬 WhatsApp",
+        addressLabel: "📍 Indirizzo",
+        addressValue: "Corso Adriano 13, Modena",
+        checkinLabel: "🕒 Check-in",
+        checkinValue: "15:00 - 00:00",
+        checkoutLabel: "🕘 Check-out",
+        checkoutValue: "10:00 / 10:30",
+        wifiLabel: "📶 Wi-Fi",
+        wifiPasswordLabel: "Password: F43X4TczR7G5PHs9CzkTsAbC",
+        hostLabel: "💬 Contatto",
+        hostNote: "Solo chat 07:00–22:00",
+        accessTitle: "🔑 Accesso",
+        accessList: [
+          "Apri il portone principale digitando il codice sul citofono.",
+          "Le chiavi dell’appartamento si trovano nel box numero 102 al piano terra.",
+          "Dopo la porta dell’ascensore, gira a destra.",
+          "La keybox è appesa al muro e si apre con codice.",
+          "Prendi le chiavi e accedi all’appartamento."
+        ],
+        rulesTitle: "📋 Regole casa",
+        rulesList: [
+          "Vietato fumare in tutti gli ambienti.",
+          "Eventi e feste non sono consentiti.",
+          "Rispettare l’orario di silenzio dalle 22:00 alle 08:00.",
+          "Prestare attenzione all’utilizzo contemporaneo degli elettrodomestici.",
+          "Avere cura di mobili, arredi e complementi dell’appartamento.",
+          "Lasciare l’appartamento in condizioni decorose per evitare costi extra o segnalazioni."
+        ],
+        trashTitle: "🗑️ Rifiuti",
+        trashList: [
+          "La tessera per aprire il cassonetto si trova in soggiorno sulla libreria.",
+          "I cassonetti si trovano lungo la via principale.",
+          "Uscendo dall’appartamento, vai a sinistra fino in fondo alla strada e gira ancora a sinistra.",
+          "La tessera è necessaria per aprire il cassonetto."
+        ],
+        checkoutTitle: "✅ Prima del check-out",
+        checkoutList: [
+          "Lasciare la biancheria del bagno nel lavandino.",
+          "Chiudere porte e finestre.",
+          "Spegnere gli elettrodomestici.",
+          "Lasciare le chiavi nella keybox, come trovate all’arrivo."
+        ],
+        parkingTitle: "🚗 Parcheggio",
+        parking1: "Parcheggio coperto, circa 10 minuti a piedi.",
+        parking2: "Parcheggio in strada, circa 3 minuti a piedi.",
+        parkingNote: "Entrambi a pagamento.",
+        suggestionsTitle: "🍝 Suggerimenti in zona",
+        marketTitle: "🛍️ Mercato",
+        marketList: [
+          '<a href="https://maps.google.com/?q=Mercato+Albinelli+Modena" target="_blank">Mercato Albinelli</a>'
+        ],
+        restaurantsTitle: "🍽️ Ristoranti",
+        restaurantsList: [
+          '<a href="https://maps.google.com/?q=Stallo+del+Pomodoro+Modena" target="_blank">Stallo del Pomodoro</a>',
+          '<a href="https://maps.google.com/?q=Il+Fantino+Modena" target="_blank">Il Fantino</a>',
+          '<a href="https://maps.google.com/?q=Vecchia+Pirri+Modena" target="_blank">Vecchia Pirri</a>',
+          '<a href="https://maps.google.com/?q=Osteria+Estense+Modena" target="_blank">Osteria Estense</a>',
+          '<a href="https://maps.google.com/?q=Osteria+Francescana+Modena" target="_blank">Osteria Francescana</a>',
+          '<a href="https://maps.google.com/?q=Franceschetta58+Modena" target="_blank">Franceschetta58</a>'
+        ],
+        barsTitle: "🍷 Bar / Aperitivo",
+        barsList: [
+          '<a href="https://maps.google.com/?q=Il+Piacere+del+Te+Modena" target="_blank">Il Piacere del Tè</a>',
+          '<a href="https://maps.google.com/?q=La+Bicicletta+Modena" target="_blank">La Bicicletta</a>'
+        ],
+        emergencyTitle: "🚑 Numeri utili",
+        emergencyList: [
+          "112 – Emergenze",
+          "115 – Vigili del Fuoco",
+          "118 – Emergenza sanitaria"
+        ],
+        footerText: "Buon soggiorno a Modena"
+      },
+      en: {
+        subtitle: "Guest Guide / Guida Ospiti",
+        introText: "All the useful information for a smooth and worry-free stay.",
+        mapsButton: "📍 Google Maps",
+        waButton: "💬 WhatsApp",
+        addressLabel: "📍 Address",
+        addressValue: "Corso Adriano 13, Modena",
+        checkinLabel: "🕒 Check-in",
+        checkinValue: "3:00 PM - 12:00 AM",
+        checkoutLabel: "🕘 Check-out",
+        checkoutValue: "By 10:00 / 10:30 AM",
+        wifiLabel: "📶 Wi-Fi",
+        wifiPasswordLabel: "Password: F43X4TczR7G5PHs9CzkTsAbC",
+        hostLabel: "💬 Contact",
+        hostNote: "Chat only 7:00 AM–10:00 PM",
+        accessTitle: "🔑 Access",
+        accessList: [
+          "Open the main entrance door by entering the code on the intercom.",
+          "The apartment keys are inside box number 102 on the ground floor.",
+          "After the elevator door, turn right.",
+          "The keybox is hanging on the wall and opens with a code.",
+          "Take the keys and enter the apartment."
+        ],
+        rulesTitle: "📋 House rules",
+        rulesList: [
+          "Smoking is not allowed anywhere inside the apartment.",
+          "Parties and events are not allowed.",
+          "Please respect quiet hours from 10:00 PM to 8:00 AM.",
+          "Please avoid using multiple high-power appliances at the same time.",
+          "Please take care of furniture, furnishings and apartment equipment.",
+          "Please leave the apartment in decent condition to avoid extra charges or reports."
+        ],
+        trashTitle: "🗑️ Waste disposal",
+        trashList: [
+          "The access card to open the waste container is in the living room on the bookshelf.",
+          "The waste containers are located along the main street.",
+          "When leaving the apartment, turn left, walk to the end of the street, then turn left again.",
+          "The card is required to open the container."
+        ],
+        checkoutTitle: "✅ Before check-out",
+        checkoutList: [
+          "Please leave the bathroom towels in the sink.",
+          "Close doors and windows.",
+          "Switch off all appliances.",
+          "Leave the keys back in the keybox, as found on arrival."
+        ],
+        parkingTitle: "🚗 Parking",
+        parking1: "Covered parking, about 10 minutes on foot.",
+        parking2: "Street parking, about 3 minutes on foot.",
+        parkingNote: "Both parking options are paid.",
+        suggestionsTitle: "🍝 Nearby suggestions",
+        marketTitle: "🛍️ Market",
+        marketList: [
+          '<a href="https://maps.google.com/?q=Mercato+Albinelli+Modena" target="_blank">Albinelli Market</a>'
+        ],
+        restaurantsTitle: "🍽️ Restaurants",
+        restaurantsList: [
+          '<a href="https://maps.google.com/?q=Stallo+del+Pomodoro+Modena" target="_blank">Stallo del Pomodoro</a>',
+          '<a href="https://maps.google.com/?q=Il+Fantino+Modena" target="_blank">Il Fantino</a>',
+          '<a href="https://maps.google.com/?q=Vecchia+Pirri+Modena" target="_blank">Vecchia Pirri</a>',
+          '<a href="https://maps.google.com/?q=Osteria+Estense+Modena" target="_blank">Osteria Estense</a>',
+          '<a href="https://maps.google.com/?q=Osteria+Francescana+Modena" target="_blank">Osteria Francescana</a>',
+          '<a href="https://maps.google.com/?q=Franceschetta58+Modena" target="_blank">Franceschetta58</a>'
+        ],
+        barsTitle: "🍷 Bars / Aperitivo",
+        barsList: [
+          '<a href="https://maps.google.com/?q=Il+Piacere+del+Te+Modena" target="_blank">Il Piacere del Tè</a>',
+          '<a href="https://maps.google.com/?q=La+Bicicletta+Modena" target="_blank">La Bicicletta</a>'
+        ],
+        emergencyTitle: "🚑 Emergency numbers",
+        emergencyList: [
+          "112 – General emergency",
+          "115 – Fire brigade",
+          "118 – Medical emergency"
+        ],
+        footerText: "Enjoy your stay in Modena"
+      }
+    };
+
+    function renderList(elementId, items) {
+      const element = document.getElementById(elementId);
+      element.innerHTML = items.map(item => `<li>${item}</li>`).join("");
+    }
+
+    function setLanguage(lang) {
+      const t = translations[lang];
+
+      document.documentElement.lang = lang;
+      document.getElementById("subtitle").textContent = t.subtitle;
+      document.getElementById("introText").textContent = t.introText;
+      document.getElementById("mapsButton").textContent = t.mapsButton;
+      document.getElementById("waButton").textContent = t.waButton;
+      document.getElementById("addressLabel").textContent = t.addressLabel;
+      document.getElementById("addressValue").textContent = t.addressValue;
+      document.getElementById("checkinLabel").textContent = t.checkinLabel;
+      document.getElementById("checkinValue").textContent = t.checkinValue;
+      document.getElementById("checkoutLabel").textContent = t.checkoutLabel;
+      document.getElementById("checkoutValue").textContent = t.checkoutValue;
+      document.getElementById("wifiLabel").textContent = t.wifiLabel;
+      document.getElementById("wifiPasswordLabel").textContent = t.wifiPasswordLabel;
+      document.getElementById("hostLabel").textContent = t.hostLabel;
+      document.getElementById("hostNote").textContent = t.hostNote;
+      document.getElementById("accessTitle").textContent = t.accessTitle;
+      document.getElementById("rulesTitle").textContent = t.rulesTitle;
+      document.getElementById("trashTitle").textContent = t.trashTitle;
+      document.getElementById("checkoutTitle").textContent = t.checkoutTitle;
+      document.getElementById("parkingTitle").textContent = t.parkingTitle;
+      document.getElementById("parking1").textContent = t.parking1;
+      document.getElementById("parking2").textContent = t.parking2;
+      document.getElementById("parkingNote").textContent = t.parkingNote;
+      document.getElementById("suggestionsTitle").textContent = t.suggestionsTitle;
+      document.getElementById("marketTitle").textContent = t.marketTitle;
+      document.getElementById("restaurantsTitle").textContent = t.restaurantsTitle;
+      document.getElementById("barsTitle").textContent = t.barsTitle;
+      document.getElementById("emergencyTitle").textContent = t.emergencyTitle;
+      document.getElementById("footerText").textContent = t.footerText;
+
+      renderList("accessList", t.accessList);
+      renderList("rulesList", t.rulesList);
+      renderList("trashList", t.trashList);
+      renderList("checkoutList", t.checkoutList);
+      renderList("marketList", t.marketList);
+      renderList("restaurantsList", t.restaurantsList);
+      renderList("barsList", t.barsList);
+      renderList("emergencyList", t.emergencyList);
+
+      const wa = document.getElementById("waButton");
+      if (lang === "en") {
+        wa.href = "https://wa.me/393290624796?text=Hello%2C%20I%20am%20a%20guest%20of%20Apartment%20Corso%20Adriano%2013";
+      } else {
+        wa.href = "https://wa.me/393290624796?text=Buongiorno%2C%20sono%20un%20ospite%20di%20Apartment%20Corso%20Adriano%2013";
+      }
+    }
+
+    setLanguage("it");
+  </script>
+</body>
+</html>
