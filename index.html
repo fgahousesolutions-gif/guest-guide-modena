@@ -191,6 +191,16 @@
       padding: 16px;
     }
 
+    .cta-card {
+      text-align: center;
+    }
+
+    .cta-text {
+      margin: 0 0 18px;
+      color: var(--muted);
+      font-size: 16px;
+    }
+
     .footer {
       text-align: center;
       color: var(--muted);
@@ -343,6 +353,14 @@
       </div>
     </section>
 
+    <section class="card cta-card">
+      <h2 id="discoverTitle">✨ Scopri Modena</h2>
+      <p class="cta-text" id="discoverText">Per eventi, musei, itinerari e altre idee utili, puoi consultare il portale turistico ufficiale della città.</p>
+      <div class="button-row">
+        <a class="btn" href="https://www.visitmodena.it/" target="_blank" rel="noopener noreferrer" id="discoverButton">🌐 Visita Visit Modena</a>
+      </div>
+    </section>
+
     <div class="footer" id="footerText">Buon soggiorno a Modena</div>
   </div>
 
@@ -426,6 +444,9 @@
           "115 – Vigili del Fuoco",
           "118 – Emergenza sanitaria"
         ],
+        discoverTitle: "✨ Scopri Modena",
+        discoverText: "Per eventi, musei, itinerari e altre idee utili, puoi consultare il portale turistico ufficiale della città.",
+        discoverButton: "🌐 Visita Visit Modena",
         footerText: "Buon soggiorno a Modena"
       },
 
@@ -507,6 +528,9 @@
           "115 – Fire brigade",
           "118 – Medical emergency"
         ],
+        discoverTitle: "✨ Discover Modena",
+        discoverText: "For events, museums, itineraries and more useful ideas, you can visit the city's official tourism portal.",
+        discoverButton: "🌐 Visit Visit Modena",
         footerText: "Enjoy your stay in Modena"
       },
 
@@ -588,6 +612,9 @@
           "115 – Pompiers",
           "118 – Urgence médicale"
         ],
+        discoverTitle: "✨ Découvrir Modène",
+        discoverText: "Pour les événements, musées, itinéraires et d'autres idées utiles, vous pouvez consulter le portail touristique officiel de la ville.",
+        discoverButton: "🌐 Visiter Visit Modena",
         footerText: "Bon séjour à Modena"
       },
 
@@ -669,6 +696,9 @@
           "115 – Bomberos",
           "118 – Emergencia médica"
         ],
+        discoverTitle: "✨ Descubre Modena",
+        discoverText: "Para eventos, museos, itinerarios y más ideas útiles, puedes consultar el portal turístico oficial de la ciudad.",
+        discoverButton: "🌐 Visita Visit Modena",
         footerText: "Que tengas una buena estancia en Modena"
       }
     };
@@ -712,6 +742,9 @@
       document.getElementById("restaurantsTitle").textContent = t.restaurantsTitle;
       document.getElementById("barsTitle").textContent = t.barsTitle;
       document.getElementById("emergencyTitle").textContent = t.emergencyTitle;
+      document.getElementById("discoverTitle").textContent = t.discoverTitle;
+      document.getElementById("discoverText").textContent = t.discoverText;
+      document.getElementById("discoverButton").textContent = t.discoverButton;
       document.getElementById("footerText").textContent = t.footerText;
 
       renderList("accessList", t.accessList);
