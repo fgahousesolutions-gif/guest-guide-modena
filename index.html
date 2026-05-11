@@ -166,6 +166,60 @@
       color: var(--muted);
     }
 
+    .accordion {
+      display: grid;
+      gap: 12px;
+    }
+
+    details.accordion-item {
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: #f8fafc;
+      overflow: hidden;
+    }
+
+    details.accordion-item summary {
+      list-style: none;
+      min-height: 58px;
+      padding: 16px 18px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      color: var(--accent);
+      font-size: 22px;
+      font-weight: 700;
+    }
+
+    details.accordion-item summary::-webkit-details-marker {
+      display: none;
+    }
+
+    details.accordion-item summary::after {
+      content: "+";
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      border: 1px solid var(--border);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex: 0 0 auto;
+      background: #fff;
+      color: var(--accent);
+      font-size: 19px;
+      line-height: 1;
+    }
+
+    details.accordion-item[open] summary::after {
+      content: "-";
+    }
+
+    .details-content {
+      padding: 0 18px 18px;
+    }
+
     .steps,
     .list {
       margin: 0;
@@ -240,6 +294,10 @@
         font-size: 26px;
       }
 
+      details.accordion-item summary {
+        font-size: 20px;
+      }
+
       .grid-2,
       .mini-grid {
         grid-template-columns: 1fr;
@@ -266,6 +324,7 @@
         <button class="btn-secondary" onclick="setLanguage('en')">English</button>
         <button class="btn-secondary" onclick="setLanguage('fr')">Français</button>
         <button class="btn-secondary" onclick="setLanguage('es')">Español</button>
+        <button class="btn-secondary" onclick="setLanguage('de')">Deutsch</button>
       </div>
 
       <div class="button-row">
@@ -323,63 +382,79 @@
     </section>
 
     <section class="card">
-      <h2 id="accessTitle">🔑 Accesso</h2>
-      <ol class="steps" id="accessList"></ol>
-    </section>
+      <div class="accordion">
+        <details class="accordion-item" open>
+          <summary id="accessTitle">🔑 Accesso</summary>
+          <div class="details-content">
+            <ol class="steps" id="accessList"></ol>
+          </div>
+        </details>
 
-    <section class="card">
-      <h2 id="rulesTitle">📋 Regole casa</h2>
-      <ul class="list" id="rulesList"></ul>
-    </section>
+        <details class="accordion-item">
+          <summary id="rulesTitle">📋 Regole casa</summary>
+          <div class="details-content">
+            <ul class="list" id="rulesList"></ul>
+          </div>
+        </details>
 
-    <section class="card">
-      <h2 id="trashTitle">🗑️ Rifiuti</h2>
-      <ul class="list" id="trashList"></ul>
-    </section>
+        <details class="accordion-item">
+          <summary id="trashTitle">🗑️ Rifiuti</summary>
+          <div class="details-content">
+            <ul class="list" id="trashList"></ul>
+          </div>
+        </details>
 
-    <section class="card">
-      <h2 id="checkoutTitle">✅ Prima del check-out</h2>
-      <ul class="list" id="checkoutList"></ul>
-    </section>
+        <details class="accordion-item">
+          <summary id="checkoutTitle">✅ Prima del check-out</summary>
+          <div class="details-content">
+            <ul class="list" id="checkoutList"></ul>
+          </div>
+        </details>
 
-    <section class="card">
-      <h2 id="parkingTitle">🚗 Parcheggio</h2>
-      <div class="mini-grid">
-        <div class="mini-card">
-          <h3><a href="https://maps.google.com/?q=NoviPark+Modena" target="_blank">NoviPark</a></h3>
-          <div id="parking1">Parcheggio coperto, circa 10 minuti a piedi.</div>
-        </div>
+        <details class="accordion-item">
+          <summary id="parkingTitle">🚗 Parcheggio</summary>
+          <div class="details-content">
+            <div class="mini-grid">
+              <div class="mini-card">
+                <h3><a href="https://maps.google.com/?q=NoviPark+Modena" target="_blank">NoviPark</a></h3>
+                <div id="parking1">Parcheggio coperto, circa 10 minuti a piedi.</div>
+              </div>
 
-        <div class="mini-card">
-          <h3><a href="https://maps.google.com/?q=Via+Prampolini+Modena" target="_blank">Via Prampolini</a></h3>
-          <div id="parking2">Parcheggio in strada, circa 3 minuti a piedi.</div>
-        </div>
-      </div>
-      <p class="note" id="parkingNote" style="margin-top: 14px;">Entrambi a pagamento.</p>
-    </section>
+              <div class="mini-card">
+                <h3><a href="https://maps.google.com/?q=Via+Prampolini+Modena" target="_blank">Via Prampolini</a></h3>
+                <div id="parking2">Parcheggio in strada, circa 3 minuti a piedi.</div>
+              </div>
+            </div>
+            <p class="note" id="parkingNote" style="margin-top: 14px;">Entrambi a pagamento.</p>
+          </div>
+        </details>
 
-    <section class="card">
-      <h2 id="suggestionsTitle">🍝 Suggerimenti in zona</h2>
-      <div class="mini-grid">
-        <div class="mini-card">
-          <h3 id="marketTitle">🛍️ Mercato</h3>
-          <ul class="list" id="marketList"></ul>
-        </div>
+        <details class="accordion-item">
+          <summary id="suggestionsTitle">🍝 Suggerimenti in zona</summary>
+          <div class="details-content">
+            <div class="mini-grid">
+              <div class="mini-card">
+                <h3 id="marketTitle">🛍️ Mercato</h3>
+                <ul class="list" id="marketList"></ul>
+              </div>
 
-        <div class="mini-card">
-          <h3 id="restaurantsTitle">🍽️ Ristoranti</h3>
-          <ul class="list" id="restaurantsList"></ul>
-        </div>
+              <div class="mini-card">
+                <h3 id="restaurantsTitle">🍽️ Ristoranti</h3>
+                <ul class="list" id="restaurantsList"></ul>
+              </div>
 
-        <div class="mini-card">
-          <h3 id="barsTitle">🍷 Bar / Aperitivo</h3>
-          <ul class="list" id="barsList"></ul>
-        </div>
+              <div class="mini-card">
+                <h3 id="barsTitle">🍷 Bar / Aperitivo</h3>
+                <ul class="list" id="barsList"></ul>
+              </div>
 
-        <div class="mini-card">
-          <h3 id="emergencyTitle">🚑 Numeri utili</h3>
-          <ul class="list" id="emergencyList"></ul>
-        </div>
+              <div class="mini-card">
+                <h3 id="emergencyTitle">🚑 Numeri utili</h3>
+                <ul class="list" id="emergencyList"></ul>
+              </div>
+            </div>
+          </div>
+        </details>
       </div>
     </section>
 
@@ -766,6 +841,97 @@
         ecosystemTitle: "Descubre el Ecosistema FGA",
         ecosystemText: "Experiencias diferentes, un mismo estilo de hospitalidad. Si ya estás pensando en tu próximo viaje, puedes explorar las otras propiedades FGA actualmente disponibles.",
         ecosystemButton: "Descubre tu próxima estancia"
+      },
+
+      de: {
+        subtitle: "Gäste-Guide / Guida Ospiti",
+        introText: "Alle wichtigen Informationen für einen einfachen und entspannten Aufenthalt.",
+        mapsButton: "📍 Google Maps",
+        waButton: "💬 WhatsApp",
+        rulesPdfButton: "📄 Hausregeln (EN)",
+        infoPdfButton: "📘 Detaillierte Anweisungen (EN)",
+        whatToDoButton: "🗺️ Aktivitäten in der Umgebung",
+        addressLabel: "📍 Adresse",
+        addressValue: "Corso Adriano 13, Modena",
+        checkinLabel: "🕒 Check-in",
+        checkinValue: "15:00 - 00:00",
+        checkoutLabel: "🕘 Check-out",
+        checkoutValue: "Bis 10:00 / 10:30",
+        wifiLabel: "📶 WLAN",
+        wifiPasswordLabel: "Passwort: F43X4TczR7G5PHs9CzkTsAbC",
+        hostLabel: "💬 Kontakt",
+        hostNote: "Nur Chat 07:00-22:00",
+        taxiLabel: "🚕 Taxi Modena",
+        taxiPhone: "Tel. 059 374242",
+        taxiWhatsapp: "Direktes WhatsApp: +39 335 1838555",
+        taxiNote: "Offizieller COTAMO-Service, rund um die Uhr verfügbar",
+        accessTitle: "🔑 Zugang",
+        accessList: [
+          "Öffnen Sie die Haupteingangstür, indem Sie den Code an der Gegensprechanlage eingeben.",
+          "Die Wohnungsschlüssel befinden sich in Box Nummer 102 im Erdgeschoss.",
+          "Nach der Aufzugstür biegen Sie rechts ab.",
+          "Die Keybox hängt an der Wand und wird mit einem Code geöffnet.",
+          "Nehmen Sie die Schlüssel und betreten Sie die Wohnung."
+        ],
+        rulesTitle: "📋 Hausregeln",
+        rulesList: [
+          "Rauchen ist in allen Räumen verboten.",
+          "Veranstaltungen und Partys sind nicht erlaubt.",
+          "Bitte halten Sie die Ruhezeiten von 22:00 bis 08:00 ein.",
+          "Bitte achten Sie darauf, nicht mehrere leistungsstarke Elektrogeräte gleichzeitig zu benutzen.",
+          "Bitte gehen Sie sorgfältig mit Möbeln, Einrichtung und Ausstattung der Wohnung um.",
+          "Bitte hinterlassen Sie die Wohnung in ordentlichem Zustand, um zusätzliche Kosten oder Meldungen zu vermeiden."
+        ],
+        trashTitle: "🗑️ Müll",
+        trashList: [
+          "Die Karte zum Öffnen des Müllcontainers befindet sich im Wohnzimmer auf dem Bücherregal.",
+          "Die Müllcontainer befinden sich entlang der Hauptstraße.",
+          "Wenn Sie die Wohnung verlassen, gehen Sie nach links bis zum Ende der Straße und biegen dann erneut links ab.",
+          "Die Karte wird benötigt, um den Container zu öffnen."
+        ],
+        checkoutTitle: "✅ Vor dem Check-out",
+        checkoutList: [
+          "Bitte legen Sie die Badwäsche ins Waschbecken.",
+          "Türen und Fenster schließen.",
+          "Elektrogeräte ausschalten.",
+          "Die Schlüssel wieder in die Keybox legen, wie Sie sie bei der Ankunft vorgefunden haben."
+        ],
+        parkingTitle: "🚗 Parken",
+        parking1: "Überdachter Parkplatz, etwa 10 Minuten zu Fuß.",
+        parking2: "Straßenparkplatz, etwa 3 Minuten zu Fuß.",
+        parkingNote: "Beide Parkmöglichkeiten sind kostenpflichtig.",
+        suggestionsTitle: "🍝 Empfehlungen in der Umgebung",
+        marketTitle: "🛍️ Markt",
+        marketList: [
+          '<a href="https://maps.google.com/?q=Mercato+Albinelli+Modena" target="_blank">Mercato Albinelli</a>'
+        ],
+        restaurantsTitle: "🍽️ Restaurants",
+        restaurantsList: [
+          '<a href="https://maps.google.com/?q=Stallo+del+Pomodoro+Modena" target="_blank">Stallo del Pomodoro</a>',
+          '<a href="https://maps.google.com/?q=Il+Fantino+Modena" target="_blank">Il Fantino</a>',
+          '<a href="https://maps.google.com/?q=Vecchia+Pirri+Modena" target="_blank">Vecchia Pirri</a>',
+          '<a href="https://maps.google.com/?q=Osteria+Estense+Modena" target="_blank">Osteria Estense</a>',
+          '<a href="https://maps.google.com/?q=Osteria+Francescana+Modena" target="_blank">Osteria Francescana</a>',
+          '<a href="https://maps.google.com/?q=Franceschetta58+Modena" target="_blank">Franceschetta58</a>'
+        ],
+        barsTitle: "🍷 Bars / Aperitif",
+        barsList: [
+          '<a href="https://maps.google.com/?q=Il+Piacere+del+Te+Modena" target="_blank">Il Piacere del Tè</a>',
+          '<a href="https://maps.google.com/?q=La+Bicicletta+Modena" target="_blank">La Bicicletta</a>'
+        ],
+        emergencyTitle: "🚑 Wichtige Nummern",
+        emergencyList: [
+          "112 – Notruf",
+          "115 – Feuerwehr",
+          "118 – Medizinischer Notfall"
+        ],
+        discoverTitle: "🎉 Weitere Veranstaltungen in Modena",
+        discoverText: "Aktuelle Veranstaltungen, Ausstellungen, Museen und Routen finden Sie auf dem offiziellen Tourismusportal Visit Modena.",
+        discoverButton: "🌐 Veranstaltungen auf Visit Modena ansehen",
+        ecosystemKicker: "FGA House Solutions",
+        ecosystemTitle: "Entdecken Sie das FGA-Ökosystem",
+        ecosystemText: "Unterschiedliche Aufenthalte, ein gemeinsamer Stil der Gastfreundschaft. Wenn Sie bereits an Ihre nächste Reise denken, können Sie die weiteren verfügbaren FGA-Unterkünfte entdecken.",
+        ecosystemButton: "Nächsten Aufenthalt entdecken"
       }
     };
 
@@ -848,6 +1014,11 @@
         wa.href = "https://wa.me/393290624796?text=Hola%2C%20soy%20un%20hu%C3%A9sped%20de%20Apartment%20Corso%20Adriano%2013";
         rulesPdfButton.href = "./house-rules-es.pdf";
         infoPdfButton.href = "./arrival-info-es.pdf";
+        whatToDoButton.href = "./what-to-do.pdf";
+      } else if (lang === "de") {
+        wa.href = "https://wa.me/393290624796?text=Guten%20Tag%2C%20ich%20bin%20Gast%20im%20Apartment%20Corso%20Adriano%2013";
+        rulesPdfButton.href = "./house-rules-en.pdf";
+        infoPdfButton.href = "./arrival-info-en.pdf";
         whatToDoButton.href = "./what-to-do.pdf";
       } else {
         wa.href = "https://wa.me/393290624796?text=Buongiorno%2C%20sono%20un%20ospite%20di%20Apartment%20Corso%20Adriano%2013";
