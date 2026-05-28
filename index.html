@@ -285,6 +285,62 @@
       font-size: 16px;
     }
 
+    .audio-guide-card {
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.92) 0%, rgba(248, 250, 252, 0.9) 100%),
+        url("./modena-audio-bg.png") center/cover no-repeat;
+      overflow: hidden;
+    }
+
+    .audio-guide-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      margin-bottom: 12px;
+    }
+
+    .audio-guide-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 14px;
+      background: #eef2ff;
+      color: var(--accent);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex: 0 0 auto;
+      font-size: 23px;
+    }
+
+    .audio-guide-title {
+      margin-bottom: 8px;
+    }
+
+    .audio-guide-text {
+      margin: 0;
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    .audio-guide-player-label {
+      margin: 18px 0 8px;
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--accent);
+    }
+
+    .audio-guide-player {
+      display: block;
+      width: 100%;
+      min-height: 44px;
+    }
+
+    .audio-guide-note {
+      margin: 12px 0 0;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
     @media (max-width: 720px) {
       .hero-image {
         height: 200px;
@@ -306,6 +362,10 @@
       .btn,
       .btn-secondary {
         flex-basis: 100%;
+      }
+
+      .audio-guide-header {
+        gap: 12px;
       }
     }
   </style>
@@ -337,6 +397,21 @@
         <a class="btn-secondary" href="./arrival-info-it.pdf" target="_blank" id="infoPdfButton">📘 Istruzioni dettagliate</a>
         <a class="btn-secondary" href="./what-to-do.pdf" target="_blank" id="whatToDoButton">🗺️ Cosa fare in zona</a>
       </div>
+    </section>
+
+    <section class="card audio-guide-card">
+      <div class="audio-guide-header">
+        <div class="audio-guide-icon" aria-hidden="true">🎧</div>
+        <div>
+          <h2 class="audio-guide-title" id="audioGuideTitle">Scopri Modena in pochi minuti</h2>
+          <p class="audio-guide-text" id="audioGuideText">Una breve guida audio per conoscere il centro storico, il sito UNESCO, i sapori locali, la Motor Valley e alcuni luoghi simbolo della città.</p>
+        </div>
+      </div>
+      <div class="audio-guide-player-label" id="audioGuideButton">Ascolta in italiano</div>
+      <audio class="audio-guide-player" id="audioGuidePlayer" controls preload="metadata" src="./GuidaAudio-ita.m4a">
+        Il tuo browser non supporta la riproduzione audio.
+      </audio>
+      <p class="audio-guide-note" id="audioGuideNote">Verifica sempre orari, aperture e prenotazioni sui siti ufficiali.</p>
     </section>
 
     <section class="card">
@@ -478,6 +553,9 @@
   </div>
 
   <script>
+    const audioGuideModenaIt = "./GuidaAudio-ita.m4a";
+    const audioGuideModenaEn = "./GiudaAudio-En.m4a";
+
     const translations = {
       it: {
         subtitle: "Guida Ospiti / Guest Guide",
@@ -487,6 +565,10 @@
         rulesPdfButton: "📄 Regole complete",
         infoPdfButton: "📘 Istruzioni dettagliate",
         whatToDoButton: "🗺️ Cosa fare in zona",
+        audioGuideTitle: "Scopri Modena in pochi minuti",
+        audioGuideText: "Una breve guida audio per conoscere il centro storico, il sito UNESCO, i sapori locali, la Motor Valley e alcuni luoghi simbolo della città.",
+        audioGuideButton: "Ascolta in italiano",
+        audioGuideNote: "Verifica sempre orari, aperture e prenotazioni sui siti ufficiali.",
         addressLabel: "📍 Indirizzo",
         addressValue: "Corso Adriano 13, Modena",
         checkinLabel: "🕒 Check-in",
@@ -578,6 +660,10 @@
         rulesPdfButton: "📄 Full house rules",
         infoPdfButton: "📘 Detailed instructions",
         whatToDoButton: "🗺️ What to do",
+        audioGuideTitle: "Discover Modena in a few minutes",
+        audioGuideText: "A short audio guide to discover Modena’s historic center, the UNESCO site, local flavors, the Motor Valley and some of the city’s most iconic places.",
+        audioGuideButton: "Listen in English",
+        audioGuideNote: "Please always check opening times, access and reservations on official websites before visiting.",
         addressLabel: "📍 Address",
         addressValue: "Corso Adriano 13, Modena",
         checkinLabel: "🕒 Check-in",
@@ -669,6 +755,10 @@
         rulesPdfButton: "📄 Règlement complet",
         infoPdfButton: "📘 Instructions détaillées",
         whatToDoButton: "🗺️ Que faire",
+        audioGuideTitle: "Discover Modena in a few minutes",
+        audioGuideText: "A short audio guide to discover Modena’s historic center, the UNESCO site, local flavors, the Motor Valley and some of the city’s most iconic places.",
+        audioGuideButton: "Listen in English",
+        audioGuideNote: "Please always check opening times, access and reservations on official websites before visiting.",
         addressLabel: "📍 Adresse",
         addressValue: "Corso Adriano 13, Modena",
         checkinLabel: "🕒 Check-in",
@@ -760,6 +850,10 @@
         rulesPdfButton: "📄 Reglas completas",
         infoPdfButton: "📘 Instrucciones detalladas",
         whatToDoButton: "🗺️ Qué hacer",
+        audioGuideTitle: "Discover Modena in a few minutes",
+        audioGuideText: "A short audio guide to discover Modena’s historic center, the UNESCO site, local flavors, the Motor Valley and some of the city’s most iconic places.",
+        audioGuideButton: "Listen in English",
+        audioGuideNote: "Please always check opening times, access and reservations on official websites before visiting.",
         addressLabel: "📍 Dirección",
         addressValue: "Corso Adriano 13, Modena",
         checkinLabel: "🕒 Check-in",
@@ -851,6 +945,10 @@
         rulesPdfButton: "📄 Hausregeln (EN)",
         infoPdfButton: "📘 Detaillierte Anweisungen (EN)",
         whatToDoButton: "🗺️ Aktivitäten in der Umgebung",
+        audioGuideTitle: "Discover Modena in a few minutes",
+        audioGuideText: "A short audio guide to discover Modena’s historic center, the UNESCO site, local flavors, the Motor Valley and some of the city’s most iconic places.",
+        audioGuideButton: "Listen in English",
+        audioGuideNote: "Please always check opening times, access and reservations on official websites before visiting.",
         addressLabel: "📍 Adresse",
         addressValue: "Corso Adriano 13, Modena",
         checkinLabel: "🕒 Check-in",
@@ -951,6 +1049,10 @@
       document.getElementById("rulesPdfButton").textContent = t.rulesPdfButton;
       document.getElementById("infoPdfButton").textContent = t.infoPdfButton;
       document.getElementById("whatToDoButton").textContent = t.whatToDoButton;
+      document.getElementById("audioGuideTitle").textContent = t.audioGuideTitle;
+      document.getElementById("audioGuideText").textContent = t.audioGuideText;
+      document.getElementById("audioGuideButton").textContent = t.audioGuideButton;
+      document.getElementById("audioGuideNote").textContent = t.audioGuideNote;
       document.getElementById("addressLabel").textContent = t.addressLabel;
       document.getElementById("addressValue").textContent = t.addressValue;
       document.getElementById("checkinLabel").textContent = t.checkinLabel;
@@ -999,6 +1101,14 @@
       const rulesPdfButton = document.getElementById("rulesPdfButton");
       const infoPdfButton = document.getElementById("infoPdfButton");
       const whatToDoButton = document.getElementById("whatToDoButton");
+      const audioGuidePlayer = document.getElementById("audioGuidePlayer");
+      const nextAudioGuide = lang === "it" ? audioGuideModenaIt : audioGuideModenaEn;
+
+      if (audioGuidePlayer.getAttribute("src") !== nextAudioGuide) {
+        audioGuidePlayer.pause();
+        audioGuidePlayer.setAttribute("src", nextAudioGuide);
+        audioGuidePlayer.load();
+      }
 
       if (lang === "en") {
         wa.href = "https://wa.me/393290624796?text=Hello%2C%20I%20am%20a%20guest%20of%20Apartment%20Corso%20Adriano%2013";
