@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Apartment Corso Adriano 13 - Guest Guide</title>
+  <style>
+    :root {
+      --bg: #f3f4f6;
+      --card: #ffffff;
+      --text: #172554;
+      --muted: #64748b;
+      --accent: #0f172a;
+      --accent-2: #1e293b;
+      --border: #e5e7eb;
+      --shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+      --radius: 18px;
+      --link: #1d4ed8;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+    }
+
+    a {
+      color: var(--link);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .hero-image {
+      width: 100%;
+      height: 260px;
+      background: url("./cover.jpg") center/cover no-repeat;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      margin-bottom: 18px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 22px;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      margin: 0 0 8px;
+      font-size: 30px;
+      line-height: 1.2;
+      color: var(--accent);
+    }
+
+    h2 {
+      margin: 0 0 16px;
+      font-size: 22px;
+      color: var(--accent);
+    }
+
+    h3 {
+      margin: 0 0 10px;
+      font-size: 18px;
+      color: var(--accent);
+    }
+
+    .subtitle {
+      margin: 0;
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    .intro-text {
+      margin: 10px 0 0;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .button-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .btn,
+    .btn-secondary {
+      flex: 1 1 220px;
+      min-height: 50px;
+      border-radius: 14px;
+      border: 2px solid var(--accent-2);
+      font-size: 16px;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 16px;
+      transition: 0.2s ease;
+    }
+
+    .btn {
+      background: var(--accent);
+      color: #fff;
+    }
+
+    .btn:hover {
+      background: #020617;
+      text-decoration: none;
+    }
+
+    .btn-secondary {
+      background: #f8fafc;
+      color: var(--accent);
+    }
+
+    .btn-secondary:hover {
+      background: #eef2f7;
+      text-decoration: none;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    .info-item {
+      margin-bottom: 18px;
+    }
+
+    .label {
+      display: block;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 4px;
+    }
+
+    .value {
+      font-size: 16px;
+      color: #0f172a;
+    }
+
+    .note {
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .steps,
+    .list {
+      margin: 0;
+      padding-left: 24px;
+    }
+
+    .steps li,
+    .list li {
+      margin-bottom: 10px;
+      font-size: 16px;
+    }
+
+    .mini-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+
+    .mini-card {
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: #f8fafc;
+      padding: 16px;
+    }
+
+    .cta-card {
+      text-align: center;
+    }
+
+    .cta-text {
+      margin: 0 0 18px;
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    .ecosystem-card {
+      text-align: center;
+      background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+    }
+
+    .ecosystem-kicker {
+      display: inline-block;
+      margin-bottom: 10px;
+      padding: 7px 12px;
+      border-radius: 999px;
+      border: 1px solid #fed7aa;
+      background: #fff7ed;
+      color: #9a3412;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .ecosystem-title {
+      margin-bottom: 12px;
+    }
+
+    .ecosystem-text {
+      max-width: 640px;
+      margin: 0 auto 18px;
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    @media (max-width: 720px) {
+      .hero-image {
+        height: 200px;
+      }
+
+      h1 {
+        font-size: 26px;
+      }
+
+      .grid-2,
+      .mini-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .btn,
+      .btn-secondary {
+        flex-basis: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="hero-image"></div>
+
+    <section class="card">
+      <h1>Apartment Corso Adriano 13</h1>
+      <p class="subtitle" id="subtitle">Guida Ospiti / Guest Guide</p>
+      <p class="intro-text" id="introText">Tutte le informazioni utili per un soggiorno semplice e senza pensieri.</p>
+
+      <div class="button-row">
+        <button class="btn-secondary" onclick="setLanguage('it')">Italiano</button>
+        <button class="btn-secondary" onclick="setLanguage('en')">English</button>
+        <button class="btn-secondary" onclick="setLanguage('fr')">Français</button>
+        <button class="btn-secondary" onclick="setLanguage('es')">Español</button>
+      </div>
+
+      <div class="button-row">
+        <a class="btn" href="https://maps.google.com/?q=Corso+Adriano+13,+Modena" target="_blank" id="mapsButton">📍 Google Maps</a>
+        <a class="btn" href="https://wa.me/393290624796?text=Buongiorno%2C%20sono%20un%20ospite%20di%20Apartment%20Corso%20Adriano%2013" target="_blank" id="waButton">💬 WhatsApp</a>
+      </div>
+
+      <div class="button-row">
+        <a class="btn-secondary" href="./house-rules-it.pdf" target="_blank" id="rulesPdfButton">📄 Regole complete</a>
+        <a class="btn-secondary" href="./arrival-info-it.pdf" target="_blank" id="infoPdfButton">📘 Istruzioni dettagliate</a>
+        <a class="btn-secondary" href="./what-to-do.pdf" target="_blank" id="whatToDoButton">🗺️ Cosa fare in zona</a>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="grid-2">
+        <div>
+          <div class="info-item">
+            <span class="label" id="addressLabel">📍 Indirizzo</span>
+            <div class="value" id="addressValue">Corso Adriano 13, Modena</div>
+          </div>
+
+          <div class="info-item">
+            <span class="label" id="checkinLabel">🕒 Check-in</span>
+            <div class="value" id="checkinValue">15:00 - 00:00</div>
+          </div>
+
+          <div class="info-item">
+            <span class="label" id="checkoutLabel">🕘 Check-out</span>
+            <div class="value" id="checkoutValue">10:00 / 10:30</div>
+          </div>
+        </div>
+
+        <div>
+          <div class="info-item">
+            <span class="label" id="wifiLabel">📶 Wi-Fi</span>
+            <div class="value">TIM-46474228</div>
+            <div class="note" id="wifiPasswordLabel">Password: F43X4TczR7G5PHs9CzkTsAbC</div>
+          </div>
+
+          <div class="info-item">
+            <span class="label" id="hostLabel">💬 Contatto</span>
+            <div class="value">WhatsApp: +39 329 0624796</div>
+            <div class="note" id="hostNote">Solo chat 07:00–22:00</div>
+          </div>
+
+          <div class="info-item">
+            <span class="label" id="taxiLabel">🚕 Taxi Modena</span>
+            <div class="value"><a href="tel:+39059374242" id="taxiPhone">Tel. 059 374242</a></div>
+            <div class="note"><a href="https://wa.me/393351838555?text=Buongiorno%2C%20vorrei%20prenotare%20un%20taxi%20a%20Modena" target="_blank" rel="noopener noreferrer" id="taxiWhatsapp">WhatsApp diretto: +39 335 1838555</a></div>
+            <div class="note" id="taxiNote">COTAMO ufficiale, servizio attivo 24 ore su 24</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2 id="accessTitle">🔑 Accesso</h2>
+      <ol class="steps" id="accessList"></ol>
+    </section>
+
+    <section class="card">
+      <h2 id="rulesTitle">📋 Regole casa</h2>
+      <ul class="list" id="rulesList"></ul>
+    </section>
+
+    <section class="card">
+      <h2 id="trashTitle">🗑️ Rifiuti</h2>
+      <ul class="list" id="trashList"></ul>
+    </section>
+
+    <section class="card">
+      <h2 id="checkoutTitle">✅ Prima del check-out</h2>
+      <ul class="list" id="checkoutList"></ul>
+    </section>
+
+    <section class="card">
+      <h2 id="parkingTitle">🚗 Parcheggio</h2>
+      <div class="mini-grid">
+        <div class="mini-card">
+          <h3><a href="https://maps.google.com/?q=NoviPark+Modena" target="_blank">NoviPark</a></h3>
+          <div id="parking1">Parcheggio coperto, circa 10 minuti a piedi.</div>
+        </div>
+
+        <div class="mini-card">
+          <h3><a href="https://maps.google.com/?q=Via+Prampolini+Modena" target="_blank">Via Prampolini</a></h3>
+          <div id="parking2">Parcheggio in strada, circa 3 minuti a piedi.</div>
+        </div>
+      </div>
+      <p class="note" id="parkingNote" style="margin-top: 14px;">Entrambi a pagamento.</p>
+    </section>
+
+    <section class="card">
+      <h2 id="suggestionsTitle">🍝 Suggerimenti in zona</h2>
+      <div class="mini-grid">
+        <div class="mini-card">
+          <h3 id="marketTitle">🛍️ Mercato</h3>
+          <ul class="list" id="marketList"></ul>
+        </div>
+
+        <div class="mini-card">
+          <h3 id="restaurantsTitle">🍽️ Ristoranti</h3>
+          <ul class="list" id="restaurantsList"></ul>
+        </div>
+
+        <div class="mini-card">
+          <h3 id="barsTitle">🍷 Bar / Aperitivo</h3>
+          <ul class="list" id="barsList"></ul>
+        </div>
+
+        <div class="mini-card">
+          <h3 id="emergencyTitle">🚑 Numeri utili</h3>
+          <ul class="list" id="emergencyList"></ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="card ecosystem-card">
+      <div class="ecosystem-kicker" id="ecosystemKicker">FGA House Solutions</div>
+      <h2 class="ecosystem-title" id="ecosystemTitle">Scopri l’Ecosistema FGA</h2>
+      <p class="ecosystem-text" id="ecosystemText">Esperienze diverse, un unico stile di accoglienza. Se stai già pensando al tuo prossimo viaggio, puoi esplorare le altre strutture FGA attualmente disponibili.</p>
+      <div class="button-row">
+        <a class="btn-secondary" href="https://ecosistema-fga.fgahousesolutions.workers.dev/#structures" target="_blank" rel="noopener noreferrer" id="ecosystemButton">Scopri il tuo prossimo soggiorno</a>
+      </div>
+    </section>
+
+    <section class="card cta-card">
+      <h2 id="discoverTitle">🎉 Altri eventi a Modena</h2>
+      <p class="cta-text" id="discoverText">Per eventi, mostre, musei e itinerari aggiornati, consulta il portale turistico ufficiale Visit Modena.</p>
+      <div class="button-row">
+        <a class="btn" href="https://www.visitmodena.it/" target="_blank" rel="noopener noreferrer" id="discoverButton">🌐 Vai agli eventi su Visit Modena</a>
+      </div>
+    </section>
+
+  </div>
+
+  <script>
+    const translations = {
+      it: {
+        subtitle: "Guida Ospiti / Guest Guide",
+        introText: "Tutte le informazioni utili per un soggiorno semplice e senza pensieri.",
+        mapsButton: "📍 Google Maps",
+        waButton: "💬 WhatsApp",
+        rulesPdfButton: "📄 Regole complete",
+        infoPdfButton: "📘 Istruzioni dettagliate",
+        whatToDoButton: "🗺️ Cosa fare in zona",
+        addressLabel: "📍 Indirizzo",
+        addressValue: "Corso Adriano 13, Modena",
+        checkinLabel: "🕒 Check-in",
+        checkinValue: "15:00 - 00:00",
+        checkoutLabel: "🕘 Check-out",
+        checkoutValue: "10:00 / 10:30",
+        wifiLabel: "📶 Wi-Fi",
+        wifiPasswordLabel: "Password: F43X4TczR7G5PHs9CzkTsAbC",
+        hostLabel: "💬 Contatto",
+        hostNote: "Solo chat 07:00–22:00",
+        taxiLabel: "🚕 Taxi Modena",
+        taxiPhone: "Tel. 059 374242",
+        taxiWhatsapp: "WhatsApp diretto: +39 335 1838555",
+        taxiNote: "COTAMO ufficiale, servizio attivo 24 ore su 24",
+        accessTitle: "🔑 Accesso",
+        accessList: [
+          "Apri il portone principale digitando il codice sul citofono.",
+          "Le chiavi dell’appartamento si trovano nel box numero 102 al piano terra.",
+          "Dopo la porta dell’ascensore, gira a destra.",
+          "La keybox è appesa al muro e si apre con codice.",
+          "Prendi le chiavi e accedi all’appartamento."
+        ],
+        rulesTitle: "📋 Regole casa",
+        rulesList: [
+          "Vietato fumare in tutti gli ambienti.",
+          "Eventi e feste non sono consentiti.",
+          "Rispettare l’orario di silenzio dalle 22:00 alle 08:00.",
+          "Prestare attenzione all’utilizzo contemporaneo degli elettrodomestici.",
+          "Avere cura di mobili, arredi e complementi dell’appartamento.",
+          "Lasciare l’appartamento in condizioni decorose per evitare costi extra o segnalazioni."
+        ],
+        trashTitle: "🗑️ Rifiuti",
+        trashList: [
+          "La tessera per aprire il cassonetto si trova in soggiorno sulla libreria.",
+          "I cassonetti si trovano lungo la via principale.",
+          "Uscendo dall’appartamento, vai a sinistra fino in fondo alla strada e gira ancora a sinistra.",
+          "La tessera è necessaria per aprire il cassonetto."
+        ],
+        checkoutTitle: "✅ Prima del check-out",
+        checkoutList: [
+          "Lasciare la biancheria del bagno nel lavandino.",
+          "Chiudere porte e finestre.",
+          "Spegnere gli elettrodomestici.",
+          "Lasciare le chiavi nella keybox, come trovate all’arrivo."
+        ],
+        parkingTitle: "🚗 Parcheggio",
+        parking1: "Parcheggio coperto, circa 10 minuti a piedi.",
+        parking2: "Parcheggio in strada, circa 3 minuti a piedi.",
+        parkingNote: "Entrambi a pagamento.",
+        suggestionsTitle: "🍝 Suggerimenti in zona",
+        marketTitle: "🛍️ Mercato",
+        marketList: [
+          '<a href="https://maps.google.com/?q=Mercato+Albinelli+Modena" target="_blank">Mercato Albinelli</a>'
+        ],
+        restaurantsTitle: "🍽️ Ristoranti",
+        restaurantsList: [
+          '<a href="https://maps.google.com/?q=Stallo+del+Pomodoro+Modena" target="_blank">Stallo del Pomodoro</a>',
+          '<a href="https://maps.google.com/?q=Il+Fantino+Modena" target="_blank">Il Fantino</a>',
+          '<a href="https://maps.google.com/?q=Vecchia+Pirri+Modena" target="_blank">Vecchia Pirri</a>',
+          '<a href="https://maps.google.com/?q=Osteria+Estense+Modena" target="_blank">Osteria Estense</a>',
+          '<a href="https://maps.google.com/?q=Osteria+Francescana+Modena" target="_blank">Osteria Francescana</a>',
+          '<a href="https://maps.google.com/?q=Franceschetta58+Modena" target="_blank">Franceschetta58</a>'
+        ],
+        barsTitle: "🍷 Bar / Aperitivo",
+        barsList: [
+          '<a href="https://maps.google.com/?q=Il+Piacere+del+Te+Modena" target="_blank">Il Piacere del Tè</a>',
+          '<a href="https://maps.google.com/?q=La+Bicicletta+Modena" target="_blank">La Bicicletta</a>'
+        ],
+        emergencyTitle: "🚑 Numeri utili",
+        emergencyList: [
+          "112 – Emergenze",
+          "115 – Vigili del Fuoco",
+          "118 – Emergenza sanitaria"
+        ],
+        discoverTitle: "🎉 Altri eventi a Modena",
+        discoverText: "Per eventi, mostre, musei e itinerari aggiornati, consulta il portale turistico ufficiale Visit Modena.",
+        discoverButton: "🌐 Vai agli eventi su Visit Modena",
+        ecosystemKicker: "FGA House Solutions",
+        ecosystemTitle: "Scopri l’Ecosistema FGA",
+        ecosystemText: "Esperienze diverse, un unico stile di accoglienza. Se stai già pensando al tuo prossimo viaggio, puoi esplorare le altre strutture FGA attualmente disponibili.",
+        ecosystemButton: "Scopri il tuo prossimo soggiorno"
+      },
+
+      en: {
+        subtitle: "Guest Guide / Guida Ospiti",
+        introText: "All the useful information for a smooth and worry-free stay.",
+        mapsButton: "📍 Google Maps",
+        waButton: "💬 WhatsApp",
+        rulesPdfButton: "📄 Full house rules",
+        infoPdfButton: "📘 Detailed instructions",
+        whatToDoButton: "🗺️ What to do",
+        addressLabel: "📍 Address",
+        addressValue: "Corso Adriano 13, Modena",
+        checkinLabel: "🕒 Check-in",
+        checkinValue: "3:00 PM - 12:00 AM",
+        checkoutLabel: "🕘 Check-out",
+        checkoutValue: "By 10:00 / 10:30 AM",
+        wifiLabel: "📶 Wi-Fi",
+        wifiPasswordLabel: "Password: F43X4TczR7G5PHs9CzkTsAbC",
+        hostLabel: "💬 Contact",
+        hostNote: "Chat only 7:00 AM–10:00 PM",
+        taxiLabel: "🚕 Modena Taxi",
+        taxiPhone: "Phone 059 374242",
+        taxiWhatsapp: "Direct WhatsApp: +39 335 1838555",
+        taxiNote: "Official COTAMO service, available 24/7",
+        accessTitle: "🔑 Access",
+        accessList: [
+          "Open the main entrance door by entering the code on the intercom.",
+          "The apartment keys are inside box number 102 on the ground floor.",
+          "After the elevator door, turn right.",
+          "The keybox is hanging on the wall and opens with a code.",
+          "Take the keys and enter the apartment."
+        ],
+        rulesTitle: "📋 House rules",
+        rulesList: [
+          "Smoking is not allowed anywhere inside the apartment.",
+          "Parties and events are not allowed.",
+          "Please respect quiet hours from 10:00 PM to 8:00 AM.",
+          "Please avoid using multiple high-power appliances at the same time.",
+          "Please take care of furniture, furnishings and apartment equipment.",
+          "Please leave the apartment in decent condition to avoid extra charges or reports."
+        ],
+        trashTitle: "🗑️ Waste disposal",
+        trashList: [
+          "The access card to open the waste container is in the living room on the bookshelf.",
+          "The waste containers are located along the main street.",
+          "When leaving the apartment, turn left, walk to the end of the street, then turn left again.",
+          "The card is required to open the container."
+        ],
+        checkoutTitle: "✅ Before check-out",
+        checkoutList: [
+          "Please leave the bathroom towels in the sink.",
+          "Close doors and windows.",
+          "Switch off all appliances.",
+          "Leave the keys back in the keybox, as found on arrival."
+        ],
+        parkingTitle: "🚗 Parking",
+        parking1: "Covered parking, about 10 minutes on foot.",
+        parking2: "Street parking, about 3 minutes on foot.",
+        parkingNote: "Both parking options are paid.",
+        suggestionsTitle: "🍝 Nearby suggestions",
+        marketTitle: "🛍️ Market",
+        marketList: [
+          '<a href="https://maps.google.com/?q=Mercato+Albinelli+Modena" target="_blank">Albinelli Market</a>'
+        ],
+        restaurantsTitle: "🍽️ Restaurants",
+        restaurantsList: [
+          '<a href="https://maps.google.com/?q=Stallo+del+Pomodoro+Modena" target="_blank">Stallo del Pomodoro</a>',
+          '<a href="https://maps.google.com/?q=Il+Fantino+Modena" target="_blank">Il Fantino</a>',
+          '<a href="https://maps.google.com/?q=Vecchia+Pirri+Modena" target="_blank">Vecchia Pirri</a>',
+          '<a href="https://maps.google.com/?q=Osteria+Estense+Modena" target="_blank">Osteria Estense</a>',
+          '<a href="https://maps.google.com/?q=Osteria+Francescana+Modena" target="_blank">Osteria Francescana</a>',
+          '<a href="https://maps.google.com/?q=Franceschetta58+Modena" target="_blank">Franceschetta58</a>'
+        ],
+        barsTitle: "🍷 Bars / Aperitivo",
+        barsList: [
+          '<a href="https://maps.google.com/?q=Il+Piacere+del+Te+Modena" target="_blank">Il Piacere del Tè</a>',
+          '<a href="https://maps.google.com/?q=La+Bicicletta+Modena" target="_blank">La Bicicletta</a>'
+        ],
+        emergencyTitle: "🚑 Emergency numbers",
+        emergencyList: [
+          "112 – General emergency",
+          "115 – Fire brigade",
+          "118 – Medical emergency"
+        ],
+        discoverTitle: "🎉 More events in Modena",
+        discoverText: "For updated events, exhibitions, museums and itineraries, visit the official Visit Modena tourism portal.",
+        discoverButton: "🌐 See events on Visit Modena",
+        ecosystemKicker: "FGA House Solutions",
+        ecosystemTitle: "Discover the FGA Ecosystem",
+        ecosystemText: "Different stays, one shared style of hospitality. If you are already thinking about your next trip, you can explore the other FGA properties currently available.",
+        ecosystemButton: "Discover your next stay"
+      },
+
+      fr: {
+        subtitle: "Guide de l'appartement / Guest Guide",
+        introText: "Toutes les informations utiles pour un séjour simple et sans souci.",
+        mapsButton: "📍 Google Maps",
+        waButton: "💬 WhatsApp",
+        rulesPdfButton: "📄 Règlement complet",
+        infoPdfButton: "📘 Instructions détaillées",
+        whatToDoButton: "🗺️ Que faire",
+        addressLabel: "📍 Adresse",
+        addressValue: "Corso Adriano 13, Modena",
+        checkinLabel: "🕒 Check-in",
+        checkinValue: "15:00 - 00:00",
+        checkoutLabel: "🕘 Check-out",
+        checkoutValue: "Avant 10:00 / 10:30",
+        wifiLabel: "📶 Wi-Fi",
+        wifiPasswordLabel: "Mot de passe : F43X4TczR7G5PHs9CzkTsAbC",
+        hostLabel: "💬 Contact",
+        hostNote: "Chat uniquement de 07:00 à 22:00",
+        taxiLabel: "🚕 Taxi Modène",
+        taxiPhone: "Tél. 059 374242",
+        taxiWhatsapp: "WhatsApp direct : +39 335 1838555",
+        taxiNote: "Service officiel COTAMO, disponible 24h/24",
+        accessTitle: "🔑 Accès",
+        accessList: [
+          "Ouvrez la porte principale en entrant le code sur l’interphone.",
+          "Les clés de l’appartement se trouvent dans la boîte numéro 102 au rez-de-chaussée.",
+          "Après la porte de l’ascenseur, tournez à droite.",
+          "La keybox est accrochée au mur et s’ouvre avec un code.",
+          "Prenez les clés et entrez dans l’appartement."
+        ],
+        rulesTitle: "📋 Règles de la maison",
+        rulesList: [
+          "Il est interdit de fumer dans tout l’appartement.",
+          "Les fêtes et événements ne sont pas autorisés.",
+          "Merci de respecter le silence de 22:00 à 08:00.",
+          "Merci d’éviter d’utiliser plusieurs appareils puissants en même temps.",
+          "Merci de prendre soin du mobilier et des équipements.",
+          "Merci de laisser l’appartement en bon état afin d’éviter des frais supplémentaires ou des signalements."
+        ],
+        trashTitle: "🗑️ Déchets",
+        trashList: [
+          "La carte pour ouvrir la benne se trouve dans le salon, sur la bibliothèque.",
+          "Les conteneurs se trouvent le long de la rue principale.",
+          "En sortant de l’appartement, tournez à gauche jusqu’au bout de la rue, puis encore à gauche.",
+          "La carte est nécessaire pour ouvrir le conteneur."
+        ],
+        checkoutTitle: "✅ Avant le départ",
+        checkoutList: [
+          "Laissez le linge de salle de bain dans le lavabo.",
+          "Fermez portes et fenêtres.",
+          "Éteignez les appareils électroménagers.",
+          "Remettez les clés dans la keybox, comme à l’arrivée."
+        ],
+        parkingTitle: "🚗 Parking",
+        parking1: "Parking couvert, à environ 10 minutes à pied.",
+        parking2: "Parking dans la rue, à environ 3 minutes à pied.",
+        parkingNote: "Les deux sont payants.",
+        suggestionsTitle: "🍝 Suggestions à proximité",
+        marketTitle: "🛍️ Marché",
+        marketList: [
+          '<a href="https://maps.google.com/?q=Mercato+Albinelli+Modena" target="_blank">Marché Albinelli</a>'
+        ],
+        restaurantsTitle: "🍽️ Restaurants",
+        restaurantsList: [
+          '<a href="https://maps.google.com/?q=Stallo+del+Pomodoro+Modena" target="_blank">Stallo del Pomodoro</a>',
+          '<a href="https://maps.google.com/?q=Il+Fantino+Modena" target="_blank">Il Fantino</a>',
+          '<a href="https://maps.google.com/?q=Vecchia+Pirri+Modena" target="_blank">Vecchia Pirri</a>',
+          '<a href="https://maps.google.com/?q=Osteria+Estense+Modena" target="_blank">Osteria Estense</a>',
+          '<a href="https://maps.google.com/?q=Osteria+Francescana+Modena" target="_blank">Osteria Francescana</a>',
+          '<a href="https://maps.google.com/?q=Franceschetta58+Modena" target="_blank">Franceschetta58</a>'
+        ],
+        barsTitle: "🍷 Bars / Apéritif",
+        barsList: [
+          '<a href="https://maps.google.com/?q=Il+Piacere+del+Te+Modena" target="_blank">Il Piacere del Tè</a>',
+          '<a href="https://maps.google.com/?q=La+Bicicletta+Modena" target="_blank">La Bicicletta</a>'
+        ],
+        emergencyTitle: "🚑 Numéros utiles",
+        emergencyList: [
+          "112 – Urgences",
+          "115 – Pompiers",
+          "118 – Urgence médicale"
+        ],
+        discoverTitle: "🎉 Autres événements à Modène",
+        discoverText: "Pour les événements, expositions, musées et itinéraires actualisés, consultez le portail touristique officiel Visit Modena.",
+        discoverButton: "🌐 Voir les événements sur Visit Modena",
+        ecosystemKicker: "FGA House Solutions",
+        ecosystemTitle: "Découvrir l’Écosystème FGA",
+        ecosystemText: "Des séjours différents, un même style d’accueil. Si vous pensez déjà à votre prochain voyage, vous pouvez explorer les autres hébergements FGA actuellement disponibles.",
+        ecosystemButton: "Découvrir votre prochain séjour"
+      },
+
+      es: {
+        subtitle: "Guía del apartamento / Guest Guide",
+        introText: "Toda la información útil para una estancia sencilla y sin preocupaciones.",
+        mapsButton: "📍 Google Maps",
+        waButton: "💬 WhatsApp",
+        rulesPdfButton: "📄 Reglas completas",
+        infoPdfButton: "📘 Instrucciones detalladas",
+        whatToDoButton: "🗺️ Qué hacer",
+        addressLabel: "📍 Dirección",
+        addressValue: "Corso Adriano 13, Modena",
+        checkinLabel: "🕒 Check-in",
+        checkinValue: "15:00 - 00:00",
+        checkoutLabel: "🕘 Check-out",
+        checkoutValue: "Antes de las 10:00 / 10:30",
+        wifiLabel: "📶 Wi-Fi",
+        wifiPasswordLabel: "Contraseña: F43X4TczR7G5PHs9CzkTsAbC",
+        hostLabel: "💬 Contacto",
+        hostNote: "Solo chat de 07:00 a 22:00",
+        taxiLabel: "🚕 Taxi Modena",
+        taxiPhone: "Tel. 059 374242",
+        taxiWhatsapp: "WhatsApp directo: +39 335 1838555",
+        taxiNote: "Servicio oficial COTAMO, disponible 24/7",
+        accessTitle: "🔑 Acceso",
+        accessList: [
+          "Abre la puerta principal introduciendo el código en el portero.",
+          "Las llaves del apartamento están dentro de la caja número 102 en la planta baja.",
+          "Después de la puerta del ascensor, gira a la derecha.",
+          "La keybox está colgada en la pared y se abre con un código.",
+          "Toma las llaves y entra al apartamento."
+        ],
+        rulesTitle: "📋 Reglas de la casa",
+        rulesList: [
+          "Está prohibido fumar en todo el apartamento.",
+          "No se permiten fiestas ni eventos.",
+          "Respeta el horario de silencio de 22:00 a 08:00.",
+          "Evita usar varios electrodomésticos potentes al mismo tiempo.",
+          "Cuida los muebles y el equipamiento del apartamento.",
+          "Deja el apartamento en buenas condiciones para evitar cargos extra o reportes."
+        ],
+        trashTitle: "🗑️ Residuos",
+        trashList: [
+          "La tarjeta para abrir el contenedor está en la sala de estar, sobre la librería.",
+          "Los contenedores están a lo largo de la calle principal.",
+          "Al salir del apartamento, gira a la izquierda hasta el final de la calle y luego otra vez a la izquierda.",
+          "La tarjeta es necesaria para abrir el contenedor."
+        ],
+        checkoutTitle: "✅ Antes del check-out",
+        checkoutList: [
+          "Deja la ropa de baño en el lavabo.",
+          "Cierra puertas y ventanas.",
+          "Apaga los electrodomésticos.",
+          "Deja las llaves en la keybox, como las encontraste al llegar."
+        ],
+        parkingTitle: "🚗 Aparcamiento",
+        parking1: "Aparcamiento cubierto, a unos 10 minutos a pie.",
+        parking2: "Aparcamiento en la calle, a unos 3 minutos a pie.",
+        parkingNote: "Ambos son de pago.",
+        suggestionsTitle: "🍝 Sugerencias en la zona",
+        marketTitle: "🛍️ Mercado",
+        marketList: [
+          '<a href="https://maps.google.com/?q=Mercato+Albinelli+Modena" target="_blank">Mercado Albinelli</a>'
+        ],
+        restaurantsTitle: "🍽️ Restaurantes",
+        restaurantsList: [
+          '<a href="https://maps.google.com/?q=Stallo+del+Pomodoro+Modena" target="_blank">Stallo del Pomodoro</a>',
+          '<a href="https://maps.google.com/?q=Il+Fantino+Modena" target="_blank">Il Fantino</a>',
+          '<a href="https://maps.google.com/?q=Vecchia+Pirri+Modena" target="_blank">Vecchia Pirri</a>',
+          '<a href="https://maps.google.com/?q=Osteria+Estense+Modena" target="_blank">Osteria Estense</a>',
+          '<a href="https://maps.google.com/?q=Osteria+Francescana+Modena" target="_blank">Osteria Francescana</a>',
+          '<a href="https://maps.google.com/?q=Franceschetta58+Modena" target="_blank">Franceschetta58</a>'
+        ],
+        barsTitle: "🍷 Bar / Aperitivo",
+        barsList: [
+          '<a href="https://maps.google.com/?q=Il+Piacere+del+Te+Modena" target="_blank">Il Piacere del Tè</a>',
+          '<a href="https://maps.google.com/?q=La+Bicicletta+Modena" target="_blank">La Bicicletta</a>'
+        ],
+        emergencyTitle: "🚑 Números útiles",
+        emergencyList: [
+          "112 – Emergencias",
+          "115 – Bomberos",
+          "118 – Emergencia médica"
+        ],
+        discoverTitle: "🎉 Más eventos en Modena",
+        discoverText: "Para eventos, exposiciones, museos e itinerarios actualizados, consulta el portal turístico oficial Visit Modena.",
+        discoverButton: "🌐 Ver eventos en Visit Modena",
+        ecosystemKicker: "FGA House Solutions",
+        ecosystemTitle: "Descubre el Ecosistema FGA",
+        ecosystemText: "Experiencias diferentes, un mismo estilo de hospitalidad. Si ya estás pensando en tu próximo viaje, puedes explorar las otras propiedades FGA actualmente disponibles.",
+        ecosystemButton: "Descubre tu próxima estancia"
+      }
+    };
+
+    function renderList(elementId, items) {
+      const element = document.getElementById(elementId);
+      element.innerHTML = items.map(item => `<li>${item}</li>`).join("");
+    }
+
+    function setLanguage(lang) {
+      const t = translations[lang];
+
+      document.documentElement.lang = lang;
+      document.getElementById("subtitle").textContent = t.subtitle;
+      document.getElementById("introText").textContent = t.introText;
+      document.getElementById("mapsButton").textContent = t.mapsButton;
+      document.getElementById("waButton").textContent = t.waButton;
+      document.getElementById("rulesPdfButton").textContent = t.rulesPdfButton;
+      document.getElementById("infoPdfButton").textContent = t.infoPdfButton;
+      document.getElementById("whatToDoButton").textContent = t.whatToDoButton;
+      document.getElementById("addressLabel").textContent = t.addressLabel;
+      document.getElementById("addressValue").textContent = t.addressValue;
+      document.getElementById("checkinLabel").textContent = t.checkinLabel;
+      document.getElementById("checkinValue").textContent = t.checkinValue;
+      document.getElementById("checkoutLabel").textContent = t.checkoutLabel;
+      document.getElementById("checkoutValue").textContent = t.checkoutValue;
+      document.getElementById("wifiLabel").textContent = t.wifiLabel;
+      document.getElementById("wifiPasswordLabel").textContent = t.wifiPasswordLabel;
+      document.getElementById("hostLabel").textContent = t.hostLabel;
+      document.getElementById("hostNote").textContent = t.hostNote;
+      document.getElementById("taxiLabel").textContent = t.taxiLabel;
+      document.getElementById("taxiPhone").textContent = t.taxiPhone;
+      document.getElementById("taxiWhatsapp").textContent = t.taxiWhatsapp;
+      document.getElementById("taxiNote").textContent = t.taxiNote;
+      document.getElementById("accessTitle").textContent = t.accessTitle;
+      document.getElementById("rulesTitle").textContent = t.rulesTitle;
+      document.getElementById("trashTitle").textContent = t.trashTitle;
+      document.getElementById("checkoutTitle").textContent = t.checkoutTitle;
+      document.getElementById("parkingTitle").textContent = t.parkingTitle;
+      document.getElementById("parking1").textContent = t.parking1;
+      document.getElementById("parking2").textContent = t.parking2;
+      document.getElementById("parkingNote").textContent = t.parkingNote;
+      document.getElementById("suggestionsTitle").textContent = t.suggestionsTitle;
+      document.getElementById("marketTitle").textContent = t.marketTitle;
+      document.getElementById("restaurantsTitle").textContent = t.restaurantsTitle;
+      document.getElementById("barsTitle").textContent = t.barsTitle;
+      document.getElementById("emergencyTitle").textContent = t.emergencyTitle;
+      document.getElementById("discoverTitle").textContent = t.discoverTitle;
+      document.getElementById("discoverText").textContent = t.discoverText;
+      document.getElementById("discoverButton").textContent = t.discoverButton;
+      document.getElementById("ecosystemKicker").textContent = t.ecosystemKicker;
+      document.getElementById("ecosystemTitle").textContent = t.ecosystemTitle;
+      document.getElementById("ecosystemText").textContent = t.ecosystemText;
+      document.getElementById("ecosystemButton").textContent = t.ecosystemButton;
+
+      renderList("accessList", t.accessList);
+      renderList("rulesList", t.rulesList);
+      renderList("trashList", t.trashList);
+      renderList("checkoutList", t.checkoutList);
+      renderList("marketList", t.marketList);
+      renderList("restaurantsList", t.restaurantsList);
+      renderList("barsList", t.barsList);
+      renderList("emergencyList", t.emergencyList);
+
+      const wa = document.getElementById("waButton");
+      const rulesPdfButton = document.getElementById("rulesPdfButton");
+      const infoPdfButton = document.getElementById("infoPdfButton");
+      const whatToDoButton = document.getElementById("whatToDoButton");
+
+      if (lang === "en") {
+        wa.href = "https://wa.me/393290624796?text=Hello%2C%20I%20am%20a%20guest%20of%20Apartment%20Corso%20Adriano%2013";
+        rulesPdfButton.href = "./house-rules-en.pdf";
+        infoPdfButton.href = "./arrival-info-en.pdf";
+        whatToDoButton.href = "./what-to-do.pdf";
+      } else if (lang === "fr") {
+        wa.href = "https://wa.me/393290624796?text=Bonjour%2C%20je%20suis%20un%20h%C3%B4te%20de%20Apartment%20Corso%20Adriano%2013";
+        rulesPdfButton.href = "./house-rules-fr.pdf";
+        infoPdfButton.href = "./arrival-info-fr.pdf";
+        whatToDoButton.href = "./what-to-do-fr.pdf";
+      } else if (lang === "es") {
+        wa.href = "https://wa.me/393290624796?text=Hola%2C%20soy%20un%20hu%C3%A9sped%20de%20Apartment%20Corso%20Adriano%2013";
+        rulesPdfButton.href = "./house-rules-es.pdf";
+        infoPdfButton.href = "./arrival-info-es.pdf";
+        whatToDoButton.href = "./what-to-do.pdf";
+      } else {
+        wa.href = "https://wa.me/393290624796?text=Buongiorno%2C%20sono%20un%20ospite%20di%20Apartment%20Corso%20Adriano%2013";
+        rulesPdfButton.href = "./house-rules-it.pdf";
+        infoPdfButton.href = "./arrival-info-it.pdf";
+        whatToDoButton.href = "./what-to-do.pdf";
+      }
+    }
+
+    setLanguage("it");
+  </script>
+</body>
+</html>
