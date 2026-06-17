@@ -166,6 +166,41 @@
       color: var(--muted);
     }
 
+    .luggage-card {
+      margin-top: 8px;
+      border: 1px solid #bfdbfe;
+      border-radius: 14px;
+      background: #eff6ff;
+      padding: 18px;
+    }
+
+    .luggage-title {
+      margin: 0 0 8px;
+      color: #0f172a;
+      font-size: 18px;
+      font-weight: 700;
+    }
+
+    .luggage-text {
+      margin: 0 0 14px;
+      color: #334155;
+      font-size: 15px;
+    }
+
+    .promo-code {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 14px;
+      padding: 8px 12px;
+      border-radius: 10px;
+      background: #ffffff;
+      border: 1px solid #bfdbfe;
+      color: #0f172a;
+      font-size: 15px;
+      font-weight: 700;
+    }
+
     .accordion {
       display: grid;
       gap: 12px;
@@ -454,6 +489,15 @@
           </div>
         </div>
       </div>
+
+      <div class="luggage-card">
+        <h2 class="luggage-title" id="luggageTitle">🧳 Deposito bagagli vicino con sconto 10%</h2>
+        <p class="luggage-text" id="luggageText">Se arrivi prima del check-in o vuoi lasciare i bagagli dopo il check-out, puoi prenotare un box presso Luggage Lounge, a pochi passi dall'appartamento. Scegli il box sul loro sito, inserisci il codice promo e riceverai direttamente da loro le istruzioni per aprire il locale e la cassetta prenotata.</p>
+        <div class="promo-code" id="luggageCode">Codice promo: 270526</div>
+        <div class="button-row" style="margin-top: 0;">
+          <a class="btn-secondary" href="https://www.luggage-lounge.com" target="_blank" rel="noopener noreferrer" id="luggageButton">Prenota su Luggage Lounge</a>
+        </div>
+      </div>
     </section>
 
     <section class="card">
@@ -583,6 +627,10 @@
         taxiPhone: "Tel. 059 374242",
         taxiWhatsapp: "WhatsApp diretto: +39 335 1838555",
         taxiNote: "COTAMO ufficiale, servizio attivo 24 ore su 24",
+        luggageTitle: "🧳 Deposito bagagli vicino con sconto 10%",
+        luggageText: "Se arrivi prima del check-in o vuoi lasciare i bagagli dopo il check-out, puoi prenotare un box presso Luggage Lounge, a pochi passi dall'appartamento. Scegli il box sul loro sito, inserisci il codice promo e riceverai direttamente da loro le istruzioni per aprire il locale e la cassetta prenotata.",
+        luggageCode: "Codice promo: 270526",
+        luggageButton: "Prenota su Luggage Lounge",
         accessTitle: "🔑 Accesso",
         accessList: [
           "Apri il portone principale digitando il codice sul citofono.",
@@ -678,6 +726,10 @@
         taxiPhone: "Phone 059 374242",
         taxiWhatsapp: "Direct WhatsApp: +39 335 1838555",
         taxiNote: "Official COTAMO service, available 24/7",
+        luggageTitle: "🧳 Nearby luggage storage with 10% discount",
+        luggageText: "If you arrive before check-in or need to leave your luggage after check-out, you can book a box at Luggage Lounge, just a short walk from the apartment. Choose the box on their website, enter the promo code and they will send you the instructions to open the location and your reserved locker.",
+        luggageCode: "Promo code: 270526",
+        luggageButton: "Book on Luggage Lounge",
         accessTitle: "🔑 Access",
         accessList: [
           "Open the main entrance door by entering the code on the intercom.",
@@ -773,6 +825,10 @@
         taxiPhone: "Tél. 059 374242",
         taxiWhatsapp: "WhatsApp direct : +39 335 1838555",
         taxiNote: "Service officiel COTAMO, disponible 24h/24",
+        luggageTitle: "🧳 Consigne à bagages à proximité avec 10% de réduction",
+        luggageText: "Si vous arrivez avant le check-in ou si vous souhaitez laisser vos bagages après le check-out, vous pouvez réserver un box chez Luggage Lounge, à quelques pas de l'appartement. Choisissez le box sur leur site, saisissez le code promo et ils vous enverront les instructions pour ouvrir le local et le casier réservé.",
+        luggageCode: "Code promo : 270526",
+        luggageButton: "Réserver sur Luggage Lounge",
         accessTitle: "🔑 Accès",
         accessList: [
           "Ouvrez la porte principale en entrant le code sur l’interphone.",
@@ -868,6 +924,10 @@
         taxiPhone: "Tel. 059 374242",
         taxiWhatsapp: "WhatsApp directo: +39 335 1838555",
         taxiNote: "Servicio oficial COTAMO, disponible 24/7",
+        luggageTitle: "🧳 Consigna de equipaje cercana con 10% de descuento",
+        luggageText: "Si llegas antes del check-in o necesitas dejar el equipaje después del check-out, puedes reservar un box en Luggage Lounge, a pocos pasos del apartamento. Elige el box en su sitio web, introduce el código promocional y ellos te enviarán las instrucciones para abrir el local y la taquilla reservada.",
+        luggageCode: "Código promo: 270526",
+        luggageButton: "Reservar en Luggage Lounge",
         accessTitle: "🔑 Acceso",
         accessList: [
           "Abre la puerta principal introduciendo el código en el portero.",
@@ -963,6 +1023,10 @@
         taxiPhone: "Tel. 059 374242",
         taxiWhatsapp: "Direktes WhatsApp: +39 335 1838555",
         taxiNote: "Offizieller COTAMO-Service, rund um die Uhr verfügbar",
+        luggageTitle: "🧳 Gepäckaufbewahrung in der Nähe mit 10% Rabatt",
+        luggageText: "Wenn Sie vor dem Check-in ankommen oder Ihr Gepäck nach dem Check-out noch aufbewahren möchten, können Sie bei Luggage Lounge, nur wenige Schritte von der Wohnung entfernt, eine Box buchen. Wählen Sie die Box auf der Website, geben Sie den Promocode ein und Sie erhalten direkt von Luggage Lounge die Anleitung zum Öffnen des Raums und des gebuchten Schließfachs.",
+        luggageCode: "Promocode: 270526",
+        luggageButton: "Bei Luggage Lounge buchen",
         accessTitle: "🔑 Zugang",
         accessList: [
           "Öffnen Sie die Haupteingangstür, indem Sie den Code an der Gegensprechanlage eingeben.",
@@ -1067,6 +1131,10 @@
       document.getElementById("taxiPhone").textContent = t.taxiPhone;
       document.getElementById("taxiWhatsapp").textContent = t.taxiWhatsapp;
       document.getElementById("taxiNote").textContent = t.taxiNote;
+      document.getElementById("luggageTitle").textContent = t.luggageTitle;
+      document.getElementById("luggageText").textContent = t.luggageText;
+      document.getElementById("luggageCode").textContent = t.luggageCode;
+      document.getElementById("luggageButton").textContent = t.luggageButton;
       document.getElementById("accessTitle").textContent = t.accessTitle;
       document.getElementById("rulesTitle").textContent = t.rulesTitle;
       document.getElementById("trashTitle").textContent = t.trashTitle;
